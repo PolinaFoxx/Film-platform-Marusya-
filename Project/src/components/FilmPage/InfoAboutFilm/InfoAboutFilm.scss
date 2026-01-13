@@ -1,0 +1,88 @@
+@use '../../../styles/global/mixins' as mix;
+
+.info {
+    margin-bottom: 120px;
+
+    @include mix.vp-375 {
+        margin-bottom: 32px;
+    }
+
+    &__list {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        gap: 24px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__item {
+        display: flex;
+        gap: 4px;
+
+        @include mix.vp-375 {
+            flex-direction: column;
+        }
+    }
+
+    &__name {
+        display: flex;
+        width: 360px;
+        gap: 4px;
+
+        @include mix.vp-375 {
+            gap: 12px;
+        }
+    }
+
+    &__border {
+        flex-grow: 1;
+        display: block;
+        border-bottom: 1px dashed #ffffff80;
+        transform: translateY(-5px);
+
+        @include mix.vp-375 {
+            display: none;
+        }
+    }
+
+    &__title {
+        margin: 0 0 64px 0;
+        color: var(--color-white);
+        font-size: 40px;
+        line-height: 48px;
+        font-weight: 700;
+
+        @include mix.vp-375 {
+            font-size: 24px;
+            line-height: 32px;
+            margin: 0 0 40px 0;
+
+        }
+    }
+
+    &__data,
+    &__text {
+        font-size: 18px;
+        line-height: 24px;
+        color: var(--color-white);
+    }
+
+    &__text {
+        @include mix.vp-375 {
+            font-size: 14px;
+            line-height: 20px;
+            color: #ffffff80;
+        }
+    }
+
+    &__data {
+
+        @include mix.vp-375 {
+            font-size: 18px;
+            line-height: 24px;
+
+        }
+    }
+
+}

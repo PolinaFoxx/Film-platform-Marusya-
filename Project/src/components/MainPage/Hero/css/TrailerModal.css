@@ -1,0 +1,50 @@
+.trailer-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease-in-out;
+}
+.trailer-modal__video {
+  width: 960px;
+  height: 540px;
+}
+@media (max-width: 375px) {
+  .trailer-modal__video {
+    width: 375px;
+    height: 212px;
+  }
+}
+.trailer-modal__btn {
+  z-index: 1000;
+  position: fixed;
+  top: 179px;
+  right: 25%;
+  background-color: var(--color-white);
+  padding: 12px;
+  border-radius: 24px;
+  border: none;
+  cursor: pointer;
+}
+@media (max-width: 375px) {
+  .trailer-modal__btn {
+    padding: 9px;
+    right: 4%;
+  }
+}
+.trailer-modal__svg {
+  width: 48px;
+  height: 48px;
+}
+@media (max-width: 375px) {
+  .trailer-modal__svg {
+    width: 24px;
+    height: 24px;
+  }
+}/*# sourceMappingURL=TrailerModal.css.map */

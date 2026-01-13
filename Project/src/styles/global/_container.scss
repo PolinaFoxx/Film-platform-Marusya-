@@ -1,0 +1,12 @@
+@use './mixins' as mix;
+
+.container {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 80px;
+
+    @include mix.vp-375 {
+    padding: 0 19px;
+  }
+}

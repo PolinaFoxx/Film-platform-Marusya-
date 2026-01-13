@@ -1,0 +1,70 @@
+.hero-meta {
+  display: flex;
+  gap: 16px;
+  margin: 0 0 16px 0;
+}
+.hero-meta__rating {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 12px;
+  width: 70px;
+  border-radius: 16px;
+}
+.hero-meta__rating--bad {
+  background-color: rgb(200, 32, 32);
+}
+.hero-meta__rating--average {
+  background-color: rgb(119, 119, 119);
+}
+.hero-meta__rating--good {
+  background-color: rgb(48, 142, 33);
+}
+.hero-meta__rating--excellent {
+  background-color: rgb(165, 148, 0);
+}
+.hero-meta__rating-icon {
+  width: 15px;
+  height: 15px;
+}
+.hero-meta__rating-text {
+  font-size: 18px;
+  line-height: 24px;
+  color: var(--color-white);
+  font-weight: 700;
+}
+.hero-meta__year, .hero-meta__genre, .hero-meta__duration {
+  font-size: 18px;
+  line-height: 24px;
+  color: rgba(255, 255, 255, 0.7019607843);
+}
+.hero-meta__duration {
+  white-space: nowrap;
+}
+.hero-meta--xs {
+  width: 47px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--color-light-gray);
+}
+.hero-meta--xs .hero-meta__rating {
+  padding: 2px 8px;
+}
+.hero-meta--xs .hero-meta__rating-icon {
+  width: 10px;
+  height: 10px;
+}
+.hero-meta--xs .hero-meta__rating-text {
+  font-size: 12px;
+  line-height: 16px;
+  color: var(--color-white);
+  font-weight: 700;
+}
+.hero-meta--xs.hero-meta--mobile .hero-meta__year,
+.hero-meta--xs.hero-meta--mobile .hero-meta__genre,
+.hero-meta--xs.hero-meta--mobile .hero-meta__duration {
+  font-size: 14px;
+  line-height: 20px;
+  color: rgba(255, 255, 255, 0.7019607843);
+}/*# sourceMappingURL=HeroMeta.css.map */

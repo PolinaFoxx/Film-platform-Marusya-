@@ -1,0 +1,16 @@
+@use '../../../../styles/global/mixins' as mix;
+
+.logo {
+    margin: 0 81px 0 0;
+
+    &__icon {
+        width: 143px;
+        height: 32px;
+
+        @include mix.vp-375 {
+           width: 80px;
+        height: 32px;
+        }
+    }
+
+}

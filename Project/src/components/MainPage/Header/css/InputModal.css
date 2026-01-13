@@ -1,0 +1,37 @@
+.input-modal {
+  position: relative;
+}
+.input-modal__svg {
+  width: 24px;
+  height: 24px;
+  left: 14px;
+  top: 16px;
+  position: absolute;
+  pointer-events: none;
+}
+.input-modal__filed {
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  padding: 16px 16px 16px 52px;
+  font-size: 19px;
+  line-height: 24px;
+}
+.input-modal__filed:hover ~ .input-modal__svg {
+  color: #b4a9ff;
+}
+.input-modal__filed:focus-visible ~ .input-modal__svg {
+  color: #b4a9ff;
+}
+.input-modal__filed:hover {
+  border-color: #b4a9ff;
+}
+.input-modal__filed:focus-visible {
+  outline: none;
+  border-color: #b4a9ff;
+}
+.input-modal__filed.input-modal__filed--error {
+  border-color: #ff7575;
+}
+.input-modal__filed.input-modal__filed--error ~ .input-modal__svg {
+  color: #ff7575;
+}/*# sourceMappingURL=InputModal.css.map */

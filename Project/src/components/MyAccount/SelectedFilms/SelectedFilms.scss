@@ -1,0 +1,79 @@
+@use '../../../styles/global/mixins' as mix;
+
+.select-films {
+
+    overflow: hidden;
+    &__list {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 64px 40px;
+
+        @include mix.vp-375 {
+            flex-direction: row;
+            gap: 40px;
+            transition: transform 0.3s ease;
+
+            overflow-x: auto; // горизонтальная прокрутка
+            scroll-snap-type: x mandatory;
+            flex-wrap: nowrap;
+
+            &::-webkit-scrollbar {
+                display: none; // скрываем скроллбар Chrome/Safari
+            }
+        }
+    }
+
+    &__item {
+        position: relative;
+
+        @include mix.vp-375 {
+            flex: 0 0 224px;
+            scroll-snap-align: start;
+        }
+
+        &:hover {
+            .select-films__btn {
+                display: flex;
+            }
+        }
+    }
+
+    &__item-card {
+        border-radius: 16px;
+        box-shadow: 0px 0px 80px rgba(255, 255, 255, 0.33);
+    }
+    &__link{
+display: block;
+    }
+
+    &__img {
+        width: 224px;
+        height: 336px;
+        border-radius: 16px;
+
+        @include mix.vp-375 {
+            width: 100%;
+        }
+    }
+
+    &__btn {
+        cursor: pointer;
+        background-color: var(--color-white);
+        border: none;
+        border-radius: 28px;
+        padding: 13px;
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        top: -5px;
+        right: -9px;
+        align-items: center;
+        justify-content: center;
+        z-index: 10;
+        display: none;
+
+    }
+}

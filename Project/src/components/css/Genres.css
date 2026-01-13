@@ -1,0 +1,18 @@
+.genres__title {
+  color: var(--color-white);
+}
+.genres__list {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+.genres__item {
+  background-color: rebeccapurple;
+  width: 290px;
+  height: 304px;
+  cursor: pointer;
+}
+.genres__image {
+  width: 290px;
+  height: 220px;
+}/*# sourceMappingURL=Genres.css.map */

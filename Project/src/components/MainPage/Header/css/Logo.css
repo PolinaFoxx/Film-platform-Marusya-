@@ -1,0 +1,13 @@
+.logo {
+  margin: 0 81px 0 0;
+}
+.logo__icon {
+  width: 143px;
+  height: 32px;
+}
+@media (max-width: 375px) {
+  .logo__icon {
+    width: 80px;
+    height: 32px;
+  }
+}/*# sourceMappingURL=Logo.css.map */

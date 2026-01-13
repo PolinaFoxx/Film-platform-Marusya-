@@ -1,0 +1,17 @@
+.custom-input {
+  position: relative;
+}
+.custom-input__svg {
+  width: 24px;
+  height: 24px;
+  left: 14px;
+  top: 16px;
+  position: absolute;
+}
+.custom-input__input {
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  padding: 16px 16px 16px 52px;
+  font-size: 19px;
+  line-height: 24px;
+}/*# sourceMappingURL=CustomInputEnt.css.map */

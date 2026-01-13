@@ -1,0 +1,53 @@
+@use '../../../../styles/global/mixins' as mix;
+
+.input-modal {
+    position: relative;
+
+
+    &__svg {
+        width: 24px;
+        height: 24px;
+        left: 14px;
+        top: 16px;
+        position: absolute;
+        pointer-events: none;
+    }
+
+
+    &__filed {
+        border-radius: 8px;
+        border: 1px solid #00000066;
+        padding: 16px 16px 16px 52px;
+        font-size: 19px;
+        line-height: 24px;
+
+        &:hover~.input-modal__svg {
+            color: #b4a9ff;
+        }
+
+        &:focus-visible~.input-modal__svg {
+            color: #b4a9ff;
+        }
+
+
+        &:hover {
+            border-color: #b4a9ff;
+        }
+
+        &:focus-visible {
+            outline: none;
+            border-color: #b4a9ff;
+        }
+
+        &.input-modal__filed--error {
+            border-color: #ff7575;
+        }
+
+        &.input-modal__filed--error~.input-modal__svg {
+            color: #ff7575;
+        }
+    }
+
+
+
+}

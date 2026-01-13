@@ -1,0 +1,37 @@
+@use '../../../../styles/global/mixins' as mix;
+
+.hero-title {
+    margin: 0 0 60px 0;
+
+    @include mix.vp-375 {
+        margin: 0 0 32px 0;
+        min-width: 335px;
+    }
+
+    &__main {
+        margin: 0 0 16px 0;
+        color: var(--color-white);
+        font-size: 48px;
+        line-height: 56px;
+
+        @include mix.vp-375 {
+            font-size: 24px;
+            line-height: 32px;
+            margin: 0 0 12px 0;
+        }
+    }
+
+    &__subtitle {
+        margin: 0;
+        color: #ffffffb3;
+        font-size: 24px;
+        line-height: 32px;
+
+
+        @include mix.vp-375 {
+            font-size: 18px;
+            line-height: 24px;
+        }
+    }
+
+}

@@ -1,0 +1,54 @@
+@use '../../../../styles/global/mixins' as mix;
+
+.trailer-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    animation: fadeIn 0.3s ease-in-out;
+
+
+    &__video {
+        width: 960px;
+        height: 540px;
+
+        @include mix.vp-375 {
+            width: 375px;
+            height: 212px;
+        }
+    }
+
+    &__btn {
+        z-index: 1000;
+        position: fixed;
+        top: 179px;
+        right: 25%;
+        background-color: var(--color-white);
+
+        padding: 12px;
+        border-radius: 24px;
+        border: none;
+        cursor: pointer;
+
+        @include mix.vp-375 {
+            padding: 9px;
+            right: 4%;
+        }
+    }
+
+    &__svg {
+        width: 48px;
+        height: 48px;
+
+        @include mix.vp-375 {
+            width: 24px;
+            height: 24px;
+        }
+    }
+}

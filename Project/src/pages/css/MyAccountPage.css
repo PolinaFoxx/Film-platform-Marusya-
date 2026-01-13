@@ -1,0 +1,58 @@
+.account__title {
+  margin: 0 0 64px 0;
+  font-size: 48px;
+  line-height: 56px;
+  color: var(--color-white);
+}
+@media (max-width: 375px) {
+  .account__title {
+    margin: 0 0 40px 0;
+    font-size: 24px;
+    line-height: 32px;
+  }
+}
+.account__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  gap: 64px;
+  margin-bottom: 64px;
+}
+@media (max-width: 375px) {
+  .account__list {
+    gap: 24px;
+    margin-bottom: 48px;
+  }
+}
+.account__item {
+  display: flex;
+  gap: 7px;
+  align-items: center;
+  position: relative;
+}
+.account__item::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #dc5dfc;
+}
+.account__item:hover::after {
+  width: 100%;
+}
+.account__link {
+  color: var(--color-white);
+  font-size: 24px;
+  line-height: 32px;
+  text-decoration: none;
+}
+.account__link-mobile {
+  display: none;
+}
+.account__icon {
+  width: 20px;
+  height: 20px;
+}/*# sourceMappingURL=MyAccountPage.css.map */

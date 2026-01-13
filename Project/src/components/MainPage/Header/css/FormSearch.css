@@ -1,0 +1,31 @@
+.form-search {
+  margin: 0 80px 0 0;
+  width: 51%;
+}
+@media (max-width: 375px) {
+  .form-search {
+    display: none;
+  }
+}
+
+@media (max-width: 375px) {
+  .form-search--mobile {
+    display: block;
+    position: absolute;
+    top: 11px;
+    right: 26px;
+    width: 353px;
+  }
+}
+
+.search-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}/*# sourceMappingURL=FormSearch.css.map */

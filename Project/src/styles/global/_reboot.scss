@@ -1,0 +1,45 @@
+@use 'variables' as vars;
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  // border: 1px red solid;
+}
+
+body {
+  font-family: vars.$ff-main;
+  font-style: normal;
+  font-weight: 400;
+  color: vars.$color-black-russian;
+  margin: 0;
+  padding: 0;
+  background-color: vars.$color-white;
+  // display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  position: relative;
+  background: linear-gradient(180deg,
+    #{vars.$bg-start} 0%,
+    #{vars.$bg-end} 100%),
+  linear-gradient(178.73deg,
+    #{vars.$accent-start} -17.53%,
+    #{vars.$accent-end} 131.74%);
+}
+
+main {
+  flex-grow: 1;
+}
+
+
+img {
+  display: block;
+  max-width: 100%;
+  object-fit: cover;
+  height: auto;
+}
+
+a {
+  color: vars.$color-black-russian;
+  text-decoration: none;
+}

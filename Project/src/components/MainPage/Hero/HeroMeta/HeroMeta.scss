@@ -1,0 +1,92 @@
+.hero-meta {
+  display: flex;
+  gap: 16px;
+  margin: 0 0 16px 0;
+
+  &__rating {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px 12px;
+    width: 70px;
+    border-radius: 16px;
+
+    //цвета для рейтинга
+    &--bad {
+      background-color: rgba(200, 32, 32, 1);
+    }
+
+    &--average {
+      background-color: rgba(119, 119, 119, 1);
+    }
+
+    &--good {
+      background-color: rgba(48, 142, 33, 1);
+    }
+
+    &--excellent {
+      background-color: rgba(165, 148, 0, 1);
+    }
+  }
+
+
+  &__rating-icon {
+    width: 15px;
+    height: 15px;
+  }
+
+  &__rating-text {
+    font-size: 18px;
+    line-height: 24px;
+    color: var(--color-white);
+    font-weight: 700;
+  }
+
+  &__year,
+  &__genre,
+  &__duration {
+    font-size: 18px;
+    line-height: 24px;
+    color: #ffffffb3;
+  }
+
+
+  &__duration {
+    white-space: nowrap;
+  }
+
+  &--xs {
+    width: 47px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--color-light-gray);
+
+    .hero-meta__rating {
+      padding: 2px 8px;
+    }
+
+    .hero-meta__rating-icon {
+      width: 10px;
+      height: 10px;
+    }
+
+    .hero-meta__rating-text {
+      font-size: 12px;
+      line-height: 16px;
+      color: var(--color-white);
+      font-weight: 700;
+    }
+  }
+
+  &--xs.hero-meta--mobile {
+
+    .hero-meta__year,
+    .hero-meta__genre,
+    .hero-meta__duration {
+      font-size: 14px;
+      line-height: 20px;
+      color: #ffffffb3;
+    }
+  }
+}

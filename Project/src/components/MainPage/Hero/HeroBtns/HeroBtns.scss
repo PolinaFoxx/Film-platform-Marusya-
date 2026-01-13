@@ -1,0 +1,101 @@
+@use '../../../../styles/global/mixins' as mix;
+
+
+.hero-btns {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+
+    @include mix.vp-375 {
+        flex-direction: column;
+            align-items: normal;
+
+    }
+
+    &__primary {
+        cursor: pointer;
+        background-color: #67a5eb;
+        color: var(--color-white);
+        font-size: 18px;
+        line-height: 24px;
+        border: none;
+        border-radius: 28px;
+        padding: 16px;
+        width: 171px;
+        font-weight: 700;
+
+        @include mix.vp-375 {
+            width: 335px;
+        }
+
+        &:hover,
+        &:focus-visible {
+            background-color: #45526e;
+            color: #ffffff80;
+        }
+
+    }
+
+    &__about {
+        cursor: pointer;
+        background-color: #393b3c;
+        color: var(--color-white);
+        font-size: 18px;
+        line-height: 24px;
+        border: none;
+        border-radius: 28px;
+        padding: 16px;
+        width: 183px;
+        font-weight: 700;
+
+        @include mix.vp-375 {
+            width: 167px;
+        }
+
+        &:hover,
+        &:focus-visible {
+            background-color: #747474;
+            color: #ffffff80;
+        }
+    }
+
+    &__like,
+    &__films {
+        cursor: pointer;
+        background-color: #393b3c;
+        border: none;
+        border-radius: 28px;
+        padding: 16px;
+        width: 68px;
+
+
+        &:hover,
+        &:focus-visible {
+            background-color: #747474;
+            color: #ffffff80;
+        }
+    }
+
+    &__like {
+        &:active {
+
+            // НЕ меняем фон кнопки, только иконку
+            .hero-btns__icon {
+                color: #ff4d4f; // красный цвет иконки!
+            }
+        }
+    }
+
+    &__icon {
+        width: 24px;
+        height: 24px;
+    }
+
+    &__btns-mobile {
+            gap: 16px;
+                        display: flex;
+
+
+        
+    }
+}

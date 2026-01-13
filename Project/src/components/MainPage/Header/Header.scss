@@ -1,0 +1,134 @@
+@use '../../../styles/global/mixins' as mix;
+
+
+.header {
+    padding: 23px 80px;
+    margin-bottom: 64px;
+
+    @include mix.vp-375 {
+        padding: 16px 20px;
+        margin-bottom: 0;
+    }
+
+    &__wrapper {
+        display: flex;
+        align-items: center;
+
+    }
+
+    &__nav {
+        display: flex;
+        gap: 45px;
+        margin: 0 40px 0 0;
+
+        @include mix.vp-375 {
+            display: none;
+        }
+    }
+
+    //МОБИЛЬНАЯ НАВИГАЦИЯ
+    &__nav--mobile {
+        display: none; // скрыта на десктопе
+
+        @include mix.vp-375 {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+    }
+
+
+
+    &__user,
+    &__link {
+        color: var(--color-white);
+        font-size: 26px;
+        line-height: 27px;
+        text-decoration: none;
+        position: relative;
+        cursor: pointer;
+
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #dc5dfc;
+        }
+
+        &:hover {
+            &::after {
+                width: 100%;
+            }
+        }
+
+        // Выключаем на мобильных
+        @include mix.vp-375 {
+            &::after {
+                display: none; // Полностью убираем псевдоэлемент
+            }
+        }
+    }
+
+    &__user {
+        @include mix.vp-375 {
+            display: none;
+        }
+    }
+
+    &__authBtn {
+        padding: 0;
+        border: 0;
+        background-color: transparent;
+        color: var(--color-white);
+        font-size: 24px;
+        line-height: 32px;
+        cursor: pointer;
+
+        @include mix.vp-375 {
+            display: none;
+        }
+    }
+
+    &__user--mobile {
+        display: block;
+    }
+
+    &__authBtn--mobile {
+        background-color: transparent;
+        border: none;
+    }
+
+    &__search-mobile-btn--mobile {
+        background: none;
+        border: none;
+        padding: 8px;
+        cursor: pointer;
+        border-radius: 8px;
+        display: none;
+
+        @include mix.vp-375 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        &:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+    }
+
+    // &__mobile-search-wrapper {
+    //     width: 100%;
+    //     margin-top: 12px;
+    //     padding: 12px 0;
+    //     order: 2; // позиция между логотипом и nav
+
+    //     @media (min-width: 1024px) {
+    //         display: none; // скрыто на десктопе
+    //     }
+    // }
+}

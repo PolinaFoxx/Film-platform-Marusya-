@@ -1,0 +1,52 @@
+ @use '../../../styles/global/mixins' as mix;
+
+ .hero {
+    padding-top: 32px;
+    margin-bottom: 40px;
+
+    @include mix.vp-375 {
+       margin-bottom: 32px;
+    }
+
+    &__content {
+       display: flex;
+
+       @include mix.vp-375 {
+          flex-direction: column-reverse;
+       }
+    }
+
+    &__wrapper {
+       width: 50%;
+    }
+ }
+
+
+ .hero-small {
+    display: flex;
+    gap: 18px;
+    //  padding: 20px 8px;
+
+    &--mobile {
+       @include mix.vp-375 {
+       flex-direction: column;
+       }
+       // padding: 0;
+    }
+
+    &__content {
+       flex-direction: column;
+       display: flex;
+       gap: 8px;
+    }
+
+    &__title {
+       margin: 0;
+       color: var(--color-white);
+       font-size: 18px;
+       line-height: 24px;
+    }
+
+
+
+ }

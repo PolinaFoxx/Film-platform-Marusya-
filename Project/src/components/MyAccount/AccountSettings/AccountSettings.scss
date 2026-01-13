@@ -1,0 +1,95 @@
+@use '../../../styles/global/mixins' as mix;
+
+.settings {
+    &__list {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        margin-bottom: 64px;
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+
+        @include mix.vp-375 {
+            margin-bottom: 40px;
+        }
+    }
+
+    &__item {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+    }
+
+    &__title {
+        font-size: 18px;
+        line-height: 24px;
+        color: var(--color-white);
+        margin: 0 0 4px 0;
+
+        @include mix.vp-375 {
+            font-size: 14px;
+            line-height: 20px;
+            color: #ffffff80;
+        }
+    }
+
+    &__info {
+        margin: 0;
+        font-size: 24px;
+        line-height: 32px;
+        color: var(--color-white);
+        font-weight: 700;
+
+        @include mix.vp-375 {
+            font-size: 14px;
+            line-height: 20px;
+        }
+    }
+
+    &__btn {
+        cursor: pointer;
+        background-color: #67a5eb;
+        color: var(--color-white);
+        font-size: 18px;
+        line-height: 24px;
+        border: none;
+        border-radius: 28px;
+        padding: 16px;
+        width: 262px;
+        font-weight: 700;
+
+        @include mix.vp-375 {
+            width: 335px;
+        }
+    }
+
+    &__svg-container {
+        width: 60px;
+        height: 60px;
+        padding: 18px;
+        background-color: #ffffff80;
+        border-radius: 30px;
+        color: var(--color-white);
+        font-size: 24px;
+        line-height: 32px;
+
+        @include mix.vp-375 {
+            padding: 8px;
+            width: 48px;
+            height: 48px;
+        }
+    }
+
+    &__svg-container--email {
+        @include mix.vp-375 {
+            padding: 12px;
+        }
+
+    }
+
+    &__svg {
+        width: 24px;
+        height: 24px;
+    }
+}

@@ -1,0 +1,56 @@
+@use '../../../../styles/global/mixins' as mix;
+
+
+
+.search {
+
+    position: absolute;
+    background-color: var(--color-bg);
+    padding: 8px;
+    border-radius: 8px;
+    right: 24.5%;
+    width: 29.5%;
+    top: 81px;
+
+    @include mix.vp-375 {
+        width: 97%;
+        right: 0;
+        overflow: hidden;
+    }
+
+
+    &__list {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+
+        @include mix.vp-375 {
+            display: flex;
+            flex-direction: row;
+            gap: 16px;
+            transition: transform 0.3s ease;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            flex-wrap: nowrap;
+        }
+    }
+
+    &__link {
+        display: block;
+    }
+
+    &__item {
+        border-radius: 6px;
+        padding: 8px;
+
+        @include mix.vp-375 {
+            flex: 0 0 220px;
+            scroll-snap-align: start;
+        }
+
+        &:hover {
+            outline: 1px solid var(--color-light-gray);
+        }
+    }
+
+}

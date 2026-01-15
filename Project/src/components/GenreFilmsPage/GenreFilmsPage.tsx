@@ -4,8 +4,6 @@ import { Link } from "react-router-dom";
 import './GenreFilmsPage.scss'
 import GenreIcon from "../../assets/icons/genre-icon.svg?react"
 import type { MovieBase } from "../type/film.type/film.type";
-// import unavailablePoster from '../../assets/images/unavailable.jpg';
-
 
 interface GenreFilmsPageProps {
   moviesQuery: UseQueryResult<MovieBase[], Error>;
@@ -13,7 +11,7 @@ interface GenreFilmsPageProps {
   formatGenreTitle: (slug?: string) => string;
   pagination: FilmsResponse;
   onShowMore: () => void;
-  isViewBtn: boolean; 
+  isViewBtn: boolean;
 }
 
 function GenreFilmsPage({
@@ -24,29 +22,6 @@ function GenreFilmsPage({
   onShowMore,
   isViewBtn,
 }: GenreFilmsPageProps) {
-
-  // Получаем отсортированные фильмы (первые 10 по рейтингу)
-  // const getSortedMovies = () => {
-  //   if (!moviesQuery.data || moviesQuery.data.length === 0) {
-  //     return [];
-  //   }
-
-  //   // Копируем массив для сортировки
-  //   const moviesCopy = [...moviesQuery.data];
-
-  //   // Сортируем по рейтингу по убыванию (от самого высокого к самому низкому)
-  //   return moviesCopy
-  //     .sort((a, b) => {
-  //       // Проверяем наличие рейтинга
-  //       const ratingA = a.tmdbRating || 0;
-  //       const ratingB = b.tmdbRating || 0;
-
-  //       return ratingB - ratingA; // по убыванию
-  //     })
-  //     .slice(0, 10); // берем только первые 10
-  // };
-
-  // const sortedMovies = getSortedMovies();
 
   console.log(moviesQuery.data);
   return (
@@ -59,7 +34,6 @@ function GenreFilmsPage({
             {formatGenreTitle(genreSlug)}
           </h1>
         </div>
-
 
         {moviesQuery.isPending && (
           <div className="genres-loading">
@@ -86,12 +60,9 @@ function GenreFilmsPage({
           <ul className="genre-films__list" >
             {pagination.map((movie) => (
               <li className="genre-films__item" key={movie.id}>
-
                 <Link
                   to={`/movie/${movie.id}`}
-                  className="genre-films__link"
-                >
-
+                  className="genre-films__link">
                   <img
                     src={movie.posterUrl ?? '/images/u.jpg'}
                     alt={movie.title}
@@ -100,24 +71,20 @@ function GenreFilmsPage({
                   />
                 </Link>
               </li>
-
             ))}
           </ul>
         )}
 
         {isViewBtn && (
           <button
-
             type="button"
             className="genre-films__btn"
-            onClick={onShowMore}
-
-          >Показать еще</button>
-
+            onClick={onShowMore}>
+            Показать еще
+          </button>
         )}
       </div>
     </section>
-
   );
 }
 

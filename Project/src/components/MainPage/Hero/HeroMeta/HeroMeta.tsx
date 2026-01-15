@@ -2,7 +2,6 @@ import './HeroMeta.scss'
 import RatingIcon from "../../../../assets/icons/star-icon.svg?react";
 import getRatingClass from '../../../../utils/Rating';
 
-
 export type MetaProps = {
   tmdbRating: number | null;
   releaseYear: number;
@@ -11,19 +10,16 @@ export type MetaProps = {
   variant?: 'default' | 'xs'
 };
 
-
 export const HeroMeta = ({ tmdbRating, releaseYear, genre, runtime, variant = 'default' }: MetaProps) => {
-  // Преобразуем runtime 
   const formatDuration = (minutes: number): string => {
     const hours = Math.floor(minutes / 60);
     const mins = minutes % 60;
     return `${hours}h ${mins}m`;
   };
 
-  // Форматируем рейтинг для отображения
   const formatRating = (rating: number | null): string => {
     if (rating === null) return 'N/A';
-    return rating.toFixed(1); // Оставляем один знак после запятой
+    return rating.toFixed(1);
   };
 
   return (

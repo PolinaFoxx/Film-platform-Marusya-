@@ -1,20 +1,20 @@
 type TopMovieCardProps = {
-    position: number;
+  position: number;
   posterUrl?: string;
   title: string;
 };
 
-export const TopMovieCard = ({ 
-position,
-  posterUrl, 
-  title, 
-   
+export const TopMovieCard = ({
+  position,
+  posterUrl,
+  title,
+
 }: TopMovieCardProps) => {
   return (
     <div className="top-movies__item-card">
-      <img 
+      <img
         src={posterUrl}
-        alt={title} 
+        alt={title}
         className="top-movies__item-image"
       />
       <div className="top-movies__rating-badge">
@@ -22,6 +22,6 @@ position,
           {position}
         </span>
       </div>
-      </div>
+    </div>
   );
 };

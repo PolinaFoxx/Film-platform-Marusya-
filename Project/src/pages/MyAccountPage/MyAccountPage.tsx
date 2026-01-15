@@ -1,8 +1,6 @@
 import { Link, Navigate, Outlet } from "react-router-dom"
 import { useQuery } from "@tanstack/react-query";
 import { fetchMe } from "../../components/type/user.type";
-// import AccountSettings from "../../components/MyAccount/AccountSettings/AccountSettings"
-// import SelectedFilms from "../../components/MyAccount/SelectedFilms/SelectedFilms"
 import './MyAccountPage.scss';
 import LikeIcon from "../../assets/icons/icon-like.svg?react"
 import AccountIcon from "../../assets/icons/icon-account.svg?react"
@@ -14,7 +12,6 @@ const MyAccountPage = () => {
         queryKey: ["users", "me"],
     });
 
-    // Если нет данных пользователя → редирект на главную
     if (!user) {
         return <Navigate to="/" replace />;
     }

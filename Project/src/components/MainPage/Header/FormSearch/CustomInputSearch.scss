@@ -1,6 +1,5 @@
 .custom-input {
     position: relative;
-    // width: 100%;
 
     &__field {
         border-radius: 8px;
@@ -14,16 +13,6 @@
         position: relative;
         background-color: var(--color-bg);
         color: var(--color-light-gray);
-
-        // Модификаторы для поля
-        // &--error {
-        //     border: 1px solid var(--color-error);
-        // }
-
-        // &--disabled {
-        //     opacity: 0.5;
-        //     cursor: not-allowed;
-        // }
     }
 
     &__svg {
@@ -36,8 +25,6 @@
         }
     }
 
-
-
     &__btn {
         padding: 0;
         border: 0;
@@ -47,19 +34,9 @@
         left: 18px;
         top: 11px;
 
-         &--erase {
-        left: auto;
-        right: 18px;
+        &--erase {
+            left: auto;
+            right: 18px;
+        }
     }
-    }
-
-    // &__btn-erase {
-    //     padding: 0;
-    //     border: 0;
-    //     background-color: transparent;
-    //     cursor: pointer;
-    //     position: absolute;
-    //     right: 18px;
-    //     top: 11px;
-    // }
 }

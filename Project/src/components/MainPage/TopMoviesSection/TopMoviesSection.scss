@@ -27,7 +27,7 @@
         @include mix.vp-375 {
             gap: 40px;
             flex-wrap: nowrap;
-            overflow-x: auto; // СКРОЛЛ ТОЛЬКО ЗДЕСЬ
+            overflow-x: auto;
             scroll-snap-type: x proximity;
 
             &::-webkit-scrollbar {
@@ -38,11 +38,10 @@
 
     &__item {
         @include mix.vp-375 {
-            flex: 0 0 224px; // фиксированная ширина
-            scroll-snap-align: start; // карточки "прилипают"
+            flex: 0 0 224px;
+            scroll-snap-align: start;
         }
     }
-
 
     &__item-card {
         position: relative;

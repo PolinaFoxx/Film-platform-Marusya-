@@ -20,7 +20,6 @@ import animationImg from "../../assets/images/animation.jpg";
 import warImg from "../../assets/images/war.jpg";
 import mysteryImg from "../../assets/images/mystery.jpg";
 
-
 type Genre = {
   id: number;
   name: string;

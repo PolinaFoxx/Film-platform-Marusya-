@@ -15,8 +15,8 @@ export const TopFilmsArraySchema = z.array(FilmTopSchema);
 export type TopFilms = z.infer<typeof TopFilmsArraySchema>;
 
 export function fetchTopFilms(): Promise<TopFilms> {
-  return fetch("https://cinemaguide.skillbox.cc/movie/top10") 
+  return fetch("https://cinemaguide.skillbox.cc/movie/top10")
     .then(validateResponse)
     .then(response => response.json())
-    .then(data => TopFilmsArraySchema.parse(data)); // Парсим как МАССИВ
+    .then(data => TopFilmsArraySchema.parse(data));
 }

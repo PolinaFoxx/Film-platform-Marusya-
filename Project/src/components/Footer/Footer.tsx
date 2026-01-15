@@ -10,32 +10,31 @@ export const Footer = () => {
             <div className='container'>
                 <div className='footer__wrapper'>
 
-            
-                <ul className='footer__list'>
-                    <li className='footer__item'>
-                        <a href="#"  className='footer__link'>
-                            <Vk className='footer__svg' />
-                        </a>
-                    </li>
-                    <li className='footer__item'>
-                        <a href="#" className='footer__link'>
-                            <YouTube className='footer__svg' />
-                        </a>
-                    </li>
+                    <ul className='footer__list'>
+                        <li className='footer__item'>
+                            <a href="#" className='footer__link'>
+                                <Vk className='footer__svg' />
+                            </a>
+                        </li>
+                        <li className='footer__item'>
+                            <a href="#" className='footer__link'>
+                                <YouTube className='footer__svg' />
+                            </a>
+                        </li>
 
-                    <li className='footer__item'>
-                        <a href="#" className='footer__link'>
-                            <Ok className='footer__svg' />
-                        </a>
-                    </li>
+                        <li className='footer__item'>
+                            <a href="#" className='footer__link'>
+                                <Ok className='footer__svg' />
+                            </a>
+                        </li>
 
-                    <li className='footer__item'>
-                        <a href="#" className='footer__link'>
-                            <Tg className='footer__svg'/>
-                        </a>
-                    </li>
-                </ul>
-                    </div>
+                        <li className='footer__item'>
+                            <a href="#" className='footer__link'>
+                                <Tg className='footer__svg' />
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </footer>
     );

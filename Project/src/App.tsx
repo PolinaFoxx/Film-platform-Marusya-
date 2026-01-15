@@ -1,11 +1,8 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import './App.css'
-
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { lazy, Suspense } from 'react';
 import { Header } from './components/MainPage/Header/Header';
 import { Footer } from './components/Footer/Footer';
-
-
 
 // Ленивая загрузка компонентов
 const LazyMainPage = lazy(() => import('./pages/MainPage/MainPage'));
@@ -16,7 +13,6 @@ const LazyMyAccountPage = lazy(() => import('./pages/MyAccountPage/MyAccountPage
 const LazySelectedFilms = lazy(() => import('./components/MyAccount/SelectedFilms/SelectedFilms'));
 const LazyAccountSettings = lazy(() => import('./components/MyAccount/AccountSettings/AccountSettings'));
 
-
 const LoadingFallback = () => (
 	<div className="loading-container">
 		<div className="loading-spinner"></div>
@@ -25,13 +21,9 @@ const LoadingFallback = () => (
 );
 
 function App() {
-
 	return (
 		<BrowserRouter>
-			{/* <Link to={"/"}>Главная</Link>
-            <Link to={"/genres"}>жанры</Link> */}
 			<Header />
-
 			<Suspense fallback={<LoadingFallback />}>
 				<main>
 					<Routes>
@@ -45,14 +37,10 @@ function App() {
 							<Route path="favorites" element={<LazySelectedFilms />} />
 							<Route path="settings" element={<LazyAccountSettings />} />
 						</Route>
-
 					</Routes>
 				</main>
-				<Footer/>
+				<Footer />
 			</Suspense>
-
-
-
 		</BrowserRouter>
 	)
 }

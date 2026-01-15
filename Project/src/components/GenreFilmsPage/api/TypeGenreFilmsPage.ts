@@ -1,4 +1,3 @@
-// types/Movie.ts
 import { z } from "zod";
 import { validateResponse } from "../../../api/validateResponse";
 import { MovieBaseSchema } from "../../type/film.type/film.type";
@@ -33,14 +32,11 @@ export const FilmSchema = z.object({
   awardsSummary: z.string().nullable(),
 });
 
-// Схема для массива фильмов
 export const FilmsResponseSchema = z.array(MovieBaseSchema);
 
-// Типы
 export type Film = z.infer<typeof FilmSchema>;
 export type FilmsResponse = z.infer<typeof FilmsResponseSchema>;
 
-// Функция для получения фильмов по жанру
 export function fetchFilmsByGenre(genreSlug: string): Promise<FilmsResponse> {
   return fetch(`https://cinemaguide.skillbox.cc/movie?genre=${genreSlug}`)
     .then(validateResponse)
@@ -62,8 +58,7 @@ export function fetchFilmsByGenre(genreSlug: string): Promise<FilmsResponse> {
     });
 }
 
-// Функция для 
-export function fetchFilmsCount(genreSlug: string | null ,count:number): Promise<FilmsResponse> {
+export function fetchFilmsCount(genreSlug: string | null, count: number): Promise<FilmsResponse> {
   return fetch(`https://cinemaguide.skillbox.cc/movie?genre=${genreSlug}&count=${count}`)
     .then(validateResponse)
     .then(response => response.json())

@@ -2,8 +2,6 @@ import z from "zod";
 import { validateResponse } from "../../../../api/validateResponse";
 import { MovieBaseSchema } from "../../../type/film.type/film.type";
 
-
-// Создаём схему для списка фильмов
 const MovieListSchema = z.array(MovieBaseSchema);
 export type MovieList = z.infer<typeof MovieListSchema>;
 

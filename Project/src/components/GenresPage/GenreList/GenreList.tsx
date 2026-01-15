@@ -3,7 +3,6 @@ import type { GenresArray } from '../api/TypeGeners';
 import genresData from '../genresData';
 import './GenreCards.scss'
 import './GenreList.scss'
-
 interface GenreListProps {
   genres: GenresArray;
 }
@@ -13,22 +12,15 @@ export const GenreList = ({ genres }: GenreListProps) => {
     <section className="genres">
       <div className="container">
         <h1 className="genres__title">Жанры фильмов</h1>
-
-
         <ul className='genres__list'>
-
           {genres.map((genre) => {
-            // ищем картинку для этого жанра
             const genreImage = genresData.find(g => g.slug === genre.slug)?.image;
-
             return (
-
               <li key={genre.id} className="genres__item">
                 <Link to={`/genre/${genre.slug}`} className="genres__link">
                   <div className="genres-card">
                     <div className='genres-card__wrapper'>
                       {genreImage ? (
-
                         <img
                           src={genreImage}
                           alt={genre.name}
@@ -51,7 +43,6 @@ export const GenreList = ({ genres }: GenreListProps) => {
           })}
         </ul>
       </div>
-
     </section>
   );
 };

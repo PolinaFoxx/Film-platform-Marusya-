@@ -27,11 +27,9 @@
         font-size: 24px;
         line-height: 32px;
 
-
         @include mix.vp-375 {
             font-size: 18px;
             line-height: 24px;
         }
     }
-
 }

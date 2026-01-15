@@ -7,8 +7,6 @@ const SearchBanner = () => {
   const [searchParams] = useSearchParams();
   const searchTitle = searchParams.get("searchTitle");
 
-
-
   const titleSearchQuery = useQuery({
     queryFn: () =>
       searchTitle ? fetchFilterTitle(searchTitle) : [],
@@ -18,16 +16,11 @@ const SearchBanner = () => {
 
   switch (titleSearchQuery.status) {
     case "success":
-      
-     // Если массив пустой — не показываем блок search
+
       if (!titleSearchQuery.data || titleSearchQuery.data.length === 0) {
-        return null; // ← ничего не рендерим
+        return null;
       }
-  
-      //возвращаем список, который состоит из карточек - баннер фильм
       return <SearchListDropdown filteredList={titleSearchQuery.data} />;
-
-
     case "error":
       return (
         <div>

@@ -8,9 +8,8 @@
         height: 32px;
 
         @include mix.vp-375 {
-           width: 80px;
-        height: 32px;
+            width: 80px;
+            height: 32px;
         }
     }
-
 }

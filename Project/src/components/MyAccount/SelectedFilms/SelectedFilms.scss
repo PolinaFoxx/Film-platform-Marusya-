@@ -3,6 +3,7 @@
 .select-films {
 
     overflow: hidden;
+
     &__list {
         margin: 0;
         padding: 0;
@@ -16,12 +17,12 @@
             gap: 40px;
             transition: transform 0.3s ease;
 
-            overflow-x: auto; // горизонтальная прокрутка
+            overflow-x: auto;
             scroll-snap-type: x mandatory;
             flex-wrap: nowrap;
 
             &::-webkit-scrollbar {
-                display: none; // скрываем скроллбар Chrome/Safari
+                display: none;
             }
         }
     }
@@ -45,8 +46,9 @@
         border-radius: 16px;
         box-shadow: 0px 0px 80px rgba(255, 255, 255, 0.33);
     }
-    &__link{
-display: block;
+
+    &__link {
+        display: block;
     }
 
     &__img {
@@ -74,6 +76,5 @@ display: block;
         justify-content: center;
         z-index: 10;
         display: none;
-
     }
 }

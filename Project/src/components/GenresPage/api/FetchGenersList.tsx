@@ -4,7 +4,7 @@ import { GenreList } from "../GenreList/GenreList";
 
 export const FetchGenresList = () => {
   const genresQuery = useQuery({
-    queryFn: fetchGenres, // Используем функцию, которая возвращает объекты
+    queryFn: fetchGenres,
     queryKey: ["genres"],
   });
 

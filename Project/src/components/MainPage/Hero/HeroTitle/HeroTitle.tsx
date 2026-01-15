@@ -1,6 +1,4 @@
-
 import './HeroTitle.scss'
-
 
 export type TitleProps = {
   title: string;

@@ -4,8 +4,8 @@ import { fetchTopFilms } from "./TopMoviesListRes";
 
 export const FetchTopMoviesList = () => {
   const topFilmsQuery = useQuery({
-    queryFn: fetchTopFilms, // Используем функцию для массива
-    queryKey: ["topFilms"], 
+    queryFn: fetchTopFilms,
+    queryKey: ["topFilms"],
   });
 
   switch (topFilmsQuery.status) {
@@ -13,7 +13,6 @@ export const FetchTopMoviesList = () => {
       return <div><span>Загрузка топ-фильмов...</span></div>;
 
     case "success":
-      // Передаем МАССИВ фильмов
       return <TopMoviesList films={topFilmsQuery.data} />;
 
     case "error":

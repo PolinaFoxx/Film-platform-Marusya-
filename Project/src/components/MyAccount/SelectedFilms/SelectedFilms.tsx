@@ -13,7 +13,6 @@ const SelectedFilms = () => {
 
   const deleteFavoritesQuery = useMutation({
     mutationFn: deleteFavoriteFilm,
-    //onSuccess функция, которая вызывается ПОСЛЕ успешного выполнения мутации
     onSuccess() {
       queryClient.invalidateQueries({ queryKey: ["favorites", "me"] })
       console.log('фильм успешно удален');
@@ -27,7 +26,6 @@ const SelectedFilms = () => {
   if (getFavoritesQuery.isLoading) return <div>Загрузка...</div>;
   if (getFavoritesQuery.isError) return <div>Ошибка</div>;
 
-  // TypeScript теперь знает тип данных
   const movies = getFavoritesQuery.data || [];
 
   return (
@@ -41,14 +39,12 @@ const SelectedFilms = () => {
                 <img src={movie.posterUrl} alt={movie.title}  className="select-films__img"/>
               </Link>
             </div>
-
             <button className="select-films__btn" onClick={() => handleDelete(movie.id)}>
             < CloseIcon/>
             </button>
           </li>
         ))}
       </ul>
-
     </div>
   );
 };

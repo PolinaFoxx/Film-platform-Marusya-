@@ -1,6 +1,5 @@
 @use '../../../styles/global/mixins' as mix;
 
-
 .header {
     padding: 23px 80px;
     margin-bottom: 64px;
@@ -13,7 +12,6 @@
     &__wrapper {
         display: flex;
         align-items: center;
-
     }
 
     &__nav {
@@ -26,9 +24,8 @@
         }
     }
 
-    //МОБИЛЬНАЯ НАВИГАЦИЯ
     &__nav--mobile {
-        display: none; // скрыта на десктопе
+        display: none;
 
         @include mix.vp-375 {
             display: flex;
@@ -36,8 +33,6 @@
             align-items: center;
         }
     }
-
-
 
     &__user,
     &__link {
@@ -47,7 +42,6 @@
         text-decoration: none;
         position: relative;
         cursor: pointer;
-
 
         &::after {
             content: '';
@@ -65,10 +59,9 @@
             }
         }
 
-        // Выключаем на мобильных
         @include mix.vp-375 {
             &::after {
-                display: none; // Полностью убираем псевдоэлемент
+                display: none;
             }
         }
     }
@@ -120,15 +113,4 @@
             background: rgba(255, 255, 255, 0.1);
         }
     }
-
-    // &__mobile-search-wrapper {
-    //     width: 100%;
-    //     margin-top: 12px;
-    //     padding: 12px 0;
-    //     order: 2; // позиция между логотипом и nav
-
-    //     @media (min-width: 1024px) {
-    //         display: none; // скрыто на десктопе
-    //     }
-    // }
 }

@@ -10,13 +10,10 @@ const AccountSettings = () => {
         queryKey: ["users", "me"],
     });
 
-    // Функция для получения инициалов
     const getInitials = (name: string, surname: string) => {
-        // Берем первую букву имени и первую букву фамилии
         const firstInitial = name ? name.charAt(0).toUpperCase() : '';
         const lastInitial = surname ? surname.charAt(0).toUpperCase() : '';
 
-        // Возвращаем инициалы (например: "ИФ")
         return `${firstInitial}${lastInitial}`;
     };
     if (!user) return <div>Загрузка...</div>;
@@ -41,13 +38,10 @@ const AccountSettings = () => {
                         <EmailIcon className="settings__svg" />
                     </span>
                     <div className="settings__wrapper">
-
                         <h2 className="settings__title">Электронная почта</h2>
                         <p className="settings__info">{user.email}</p>
                     </div>
-
                 </li>
-
 
             </ul>
             <button className="settings__btn" onClick={() => logout()}>Выйти из аккаунта</button>

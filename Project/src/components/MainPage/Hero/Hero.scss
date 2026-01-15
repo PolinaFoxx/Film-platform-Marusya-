@@ -25,13 +25,11 @@
  .hero-small {
     display: flex;
     gap: 18px;
-    //  padding: 20px 8px;
 
     &--mobile {
        @include mix.vp-375 {
-       flex-direction: column;
+          flex-direction: column;
        }
-       // padding: 0;
     }
 
     &__content {
@@ -46,7 +44,4 @@
        font-size: 18px;
        line-height: 24px;
     }
-
-
-
  }

@@ -17,8 +17,8 @@
     @include mix.vp-375 {
         width: 375px;
         height: 212px;
-            top: 174px;
-    left: 3%;
+        top: 174px;
+        left: 3%;
     }
 
     &__span {
@@ -32,7 +32,6 @@
         animation: rotation 1s linear infinite;
     }
 
-
     @keyframes rotation {
         0% {
             transform: rotate(0deg);
@@ -42,5 +41,4 @@
             transform: rotate(360deg);
         }
     }
-
 }

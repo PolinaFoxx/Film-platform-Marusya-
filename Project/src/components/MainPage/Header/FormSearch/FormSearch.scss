@@ -1,6 +1,5 @@
 @use '../../../../styles/global/mixins' as mix;
 
-
 .form-search {
     margin: 0 80px 0 0;
     width: 51%;
@@ -11,7 +10,6 @@
 }
 
 .form-search--mobile {
-
     @include mix.vp-375 {
         display: block;
         position: absolute;
@@ -31,5 +29,4 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    // z-index: 1000;
 }

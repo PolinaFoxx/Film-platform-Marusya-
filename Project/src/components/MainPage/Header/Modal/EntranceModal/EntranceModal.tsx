@@ -10,7 +10,6 @@ import { login } from "../../../../type/user.type"
 import { EmailIcon } from "../../../../../assets/icons/EmailIcon/EmailIcon";
 import { PasswordIcon } from "../../../../../assets/icons/PasswordIcon/PasswordIcon";
 
-
 interface EntranceModalProps {
     isOpen: boolean;
     onClose: () => void;
@@ -32,7 +31,6 @@ export const EntranceModal = ({ isOpen, onClose, onSwitchToAuth }: EntranceModal
         }));
     };
 
-    //отправляем данные на сервер
     const loginMutation = useMutation({
         mutationFn: login,
         onSuccess() {
@@ -47,7 +45,6 @@ export const EntranceModal = ({ isOpen, onClose, onSwitchToAuth }: EntranceModal
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
         e.preventDefault();
-        // Отправка данных для входа
         loginMutation.mutate({
             email: formData.email,
             password: formData.password
@@ -57,14 +54,8 @@ export const EntranceModal = ({ isOpen, onClose, onSwitchToAuth }: EntranceModal
     return (
 
         <div className="modal" onClick={onClose}>
-            {/* при клике по фогу модалка закрывается */}
             <div className="modal__content" onClick={(e) => e.stopPropagation()}>
-                {/* e.stopPropagation() = "не передавай клик родителям".Иначе фон не закроется 
-                Клик на контент → не закрываем (блокируем всплытие)
-                */}
-
                 <LogoIcon className="modal__logo" />
-
                 <form className="modal__form" onSubmit={handleSubmit}>
                     <div className="modal__wrapper">
 
@@ -95,8 +86,6 @@ export const EntranceModal = ({ isOpen, onClose, onSwitchToAuth }: EntranceModal
                         </div>
 
                     </div>
-
-
                     {loginMutation.error && <span> {loginMutation.error.message}</span>}
 
                     <button className="modal__btn"
@@ -115,7 +104,6 @@ export const EntranceModal = ({ isOpen, onClose, onSwitchToAuth }: EntranceModal
                 </button>
                 <button className="modal__close"
                     onClick={onClose}
-
                 >
                     <CloseIcon className="modal__svg" />
                 </button>

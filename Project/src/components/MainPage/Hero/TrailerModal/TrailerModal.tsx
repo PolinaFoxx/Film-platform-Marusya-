@@ -13,20 +13,17 @@ interface HeroPropsTrilerId {
 const TrailerModal = ({ trailerId, isOpen, onClose }: HeroPropsTrilerId) => {
     const [isLoading, setIsLoading] = useState(true);
 
-
-    
     const handleIframeLoad = () => {
         setIsLoading(false);
     };
 
-    
+
     const handleClose = () => {
-        setIsLoading(true); // Сбрасываем при закрытии
+        setIsLoading(true);
         onClose();
     };
 
-    //isModalOpen: true — модалка открыта (когда получили trailerId) когда запрос отправился 
-    if (!isOpen) return null; // Не показывать если не открыта
+    if (!isOpen) return null;
 
     return (
 
@@ -42,10 +39,9 @@ const TrailerModal = ({ trailerId, isOpen, onClose }: HeroPropsTrilerId) => {
                 title="Трейлер"
                 allowFullScreen
                 onLoad={handleIframeLoad}
-
             />
             <button onClick={handleClose} className='trailer-modal__btn' >
-                <CloseIcon  className='trailer-modal__svg'/>
+                <CloseIcon className='trailer-modal__svg' />
             </button>
         </div>
     )

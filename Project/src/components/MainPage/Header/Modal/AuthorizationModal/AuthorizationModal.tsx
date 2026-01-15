@@ -21,7 +21,6 @@ interface AuthorizationModalProps {
 
 export const AuthorizationModal = ({ isOpen, onClose, onSwitchToSuccess, onSwitchToLogin }: AuthorizationModalProps) => {
 
-    // состояние  формы
     const [formData, setFormData] = useState({
         email: "",
         name: "",
@@ -30,13 +29,12 @@ export const AuthorizationModal = ({ isOpen, onClose, onSwitchToSuccess, onSwitc
         confirmPassword: ""
     });
 
-    // Состояние для отслеживания ошибок
     const [showErrors, setShowErrors] = useState(false);
 
     const regMutation = useMutation({
         mutationFn: registerUser,
         onSuccess: () => {
-            onSwitchToSuccess(); // Переход на модалку об успеш рег
+            onSwitchToSuccess();
         }
     }, queryClient)
 
@@ -54,7 +52,6 @@ export const AuthorizationModal = ({ isOpen, onClose, onSwitchToSuccess, onSwitc
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
         e.preventDefault();
 
-        // Проверяем все поля
         const isFormValid =
             formData.email.trim() !== "" &&
             formData.name.trim() !== "" &&
@@ -64,14 +61,11 @@ export const AuthorizationModal = ({ isOpen, onClose, onSwitchToSuccess, onSwitc
             formData.password === formData.confirmPassword;
 
         if (!isFormValid) {
-            // Показываем ошибки
             setShowErrors(true);
             return;
         }
-        // Скрываем ошибки, если форма валидна
         setShowErrors(false);
 
-        // Подготовка данных для отправки
         const userData = {
             email: formData.email,
             password: formData.password,
@@ -81,21 +75,12 @@ export const AuthorizationModal = ({ isOpen, onClose, onSwitchToSuccess, onSwitc
 
         regMutation.mutate(userData);
     };
-    // // Проверка для каждого поля
-    // const isEmailValid = formData.email.trim() !== "";
-    // const isNameValid = formData.name.trim() !== "";
-    // const isSurnameValid = formData.surname.trim() !== "";
-    // const isPasswordValid = formData.password.trim() !== "";
-    // const isConfirmValid = formData.confirmPassword.trim() !== "" && formData.password === formData.confirmPassword;
+
     return (
 
         <div className="modal" onClick={onClose}>
-            {/* при клике по фогу модалка закрывается */}
             <div className="modal__content" onClick={(e) => e.stopPropagation()}>
-                {/* e.stopPropagation() = "не передавай клик родителям".Иначе фон не закроется */}
-
                 <LogoIcon className="modal__logo" />
-
                 <form className="modal__form" onSubmit={handleSubmit}>
                     <div className="modal__wrapper">
                         <div className="input-modal">
@@ -184,22 +169,19 @@ export const AuthorizationModal = ({ isOpen, onClose, onSwitchToSuccess, onSwitc
                         Создать аккаунт
                     </button>
 
-
                 </form>
                 {/* Кнопка для перехода ко входу */}
                 <button
                     type="button"
-                    onClick={onSwitchToLogin} // Обработчик
+                    onClick={onSwitchToLogin}
                     className="modal__btn-black"
                 >
-
                     У меня есть пароль
                 </button>
                 <button className="modal__close"
                     onClick={onClose}
                 >
                     <CloseIcon className="modal__svg" />
-
                 </button>
             </div>
         </div>

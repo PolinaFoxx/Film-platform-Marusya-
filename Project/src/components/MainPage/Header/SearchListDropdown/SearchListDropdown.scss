@@ -1,7 +1,5 @@
 @use '../../../../styles/global/mixins' as mix;
 
-
-
 .search {
 
     position: absolute;
@@ -17,7 +15,6 @@
         right: 0;
         overflow: hidden;
     }
-
 
     &__list {
         margin: 0;
@@ -52,5 +49,4 @@
             outline: 1px solid var(--color-light-gray);
         }
     }
-
 }

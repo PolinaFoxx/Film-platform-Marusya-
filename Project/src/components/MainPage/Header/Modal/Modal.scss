@@ -13,7 +13,6 @@
   z-index: 1000;
   animation: fadeIn 0.3s ease-in-out;
 
-
   &__content {
     background-color: var(--color-white);
     border-radius: 12px;
@@ -31,7 +30,6 @@
 
     @include mix.vp-375 {
       padding: 32px 20px;
-
     }
   }
 
@@ -75,7 +73,6 @@
     margin-bottom: 24px;
   }
 
-
   &__btn {
     cursor: pointer;
     background-color: #67a5eb;
@@ -90,7 +87,6 @@
 
     @include mix.vp-375 {
       width: 295px;
-
     }
   }
 

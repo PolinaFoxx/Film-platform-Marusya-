@@ -6,7 +6,7 @@
   margin: 0 auto;
   padding: 0 80px;
 
-    @include mix.vp-375 {
+  @include mix.vp-375 {
     padding: 0 19px;
   }
 }

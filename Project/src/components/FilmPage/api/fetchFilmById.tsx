@@ -7,7 +7,6 @@ function FetchFilmPage() {
   const { movieId } = useParams<{ movieId: string }>();
 
   const movieQuery = useQuery({
-    //получаем фильм по айди
     queryKey: ['movie', movieId],
     queryFn: () => {
       if (!movieId) {

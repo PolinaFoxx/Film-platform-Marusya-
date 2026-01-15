@@ -13,10 +13,9 @@
         align-items: center;
         margin-bottom: 64px;
 
-
-    @include mix.vp-375 {
-        margin-bottom: 40px;
-    }
+        @include mix.vp-375 {
+            margin-bottom: 40px;
+        }
     }
 
     &__svg {

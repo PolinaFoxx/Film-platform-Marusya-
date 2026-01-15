@@ -1,4 +1,3 @@
-
 import { FetchGenresList } from '../../components/GenresPage/api/FetchGenersList';
 
 function GenresPage() {

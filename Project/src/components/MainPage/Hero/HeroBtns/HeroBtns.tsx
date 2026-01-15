@@ -32,7 +32,6 @@ export const HeroBtns = ({
   movie,
 }: HeroBtnsProps) => {
 
-  // Используем хук
   const {
     isLoginOpen,
     isRegisterOpen,
@@ -42,61 +41,48 @@ export const HeroBtns = ({
     switchToLogin
   } = useAuthModal();
 
-  //Управление состоянием модалки видео
-  const [trailerId, setTrailerId] = useState<string | null>(null);//состояние текущего видео 
-  const [isModalOpen, setIsModalOpen] = useState(false);// для трейлера
+  const [trailerId, setTrailerId] = useState<string | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
-  //Запрос прверки пользователя авториз\не авториз
   const meQuery = useQuery({
-    queryFn: () => fetchMe(),//запрос данных о текущем пользователе
+    queryFn: () => fetchMe(),
     queryKey: ["users", "me"],
   }, queryClient)
 
-  // Мутация для добавления в избранное
   const addFavoriteMutation = useMutation({
     mutationFn: () => fetchAddFavorites(movie.id),
     onSuccess: () => {
-      // Инвалидируем кеш для обновления данных
       queryClient.invalidateQueries({ queryKey: ["users", "me"] });
       queryClient.invalidateQueries({ queryKey: ["favorites", "me"] });
     }
   });
 
-  // Мутация для удаления из избранного
   const deleteFavoriteMutation = useMutation({
     mutationFn: () => deleteFavoriteFilm(movie.id),
     onSuccess: () => {
-      // Инвалидируем кеш для обновления данных
       queryClient.invalidateQueries({ queryKey: ["users", "me"] });
       queryClient.invalidateQueries({ queryKey: ["favorites", "me"] });
     }
   });
 
-  const favorites = meQuery.data?.favorites || []; //получаем массив изранных фильмов
-  //Проверка, добавлен ли уже фильм в избранное
+  const favorites = meQuery.data?.favorites || [];
   const isFavorite = favorites.includes(movie.id.toString());
 
-  // Пока грузится проверка
   if (meQuery.isLoading) {
     return <div>Загрузка...</div>;
   }
 
-  // Обработчик toggle для избранного
   const handleFavoriteClick = (e: MouseEvent<HTMLButtonElement>) => {
     e.stopPropagation();
     e.preventDefault();
 
     if (meQuery.data) {
-      // Пользователь авторизован
       if (isFavorite) {
-        // Удаляем из избранного
         deleteFavoriteMutation.mutate();
       } else {
-        // Добавляем в избранное
         addFavoriteMutation.mutate();
       }
     } else {
-      // Не авторизован — открываем модалку входа
       openLogin();
     }
   };
@@ -108,10 +94,10 @@ export const HeroBtns = ({
   }
 
   const handleClickTrailer = () => {
-    fetchFilmById(movie.id)//запрос на сервер за видео
-      .then(dataFilm => {//получаем объект
-        setTrailerId(dataFilm.trailerYouTubeId); // setTrailerId сохраняет текущ св-во т.е видео т.е trailerId = текущ.видео
-        setIsModalOpen(true);// Открываем модалку
+    fetchFilmById(movie.id)
+      .then(dataFilm => {
+        setTrailerId(dataFilm.trailerYouTubeId);
+        setIsModalOpen(true);
       })
       .catch(error => {
         console.error('Ошибка загрузки трейлера:', error);
@@ -131,27 +117,26 @@ export const HeroBtns = ({
       />
       <div className="hero-btns__btns-mobile">
 
-          <Link to={`/movie/${movie.id}`}>
-            {showAboutButton && (
-              <button className="hero-btns__about">О фильме</button>
-            )}
-          </Link>
+        <Link to={`/movie/${movie.id}`}>
+          {showAboutButton && (
+            <button className="hero-btns__about">О фильме</button>
+          )}
+        </Link>
 
-          {/* Избранное */}
-          <button
-            className={`hero-btns__like ${isFavorite ? 'active' : ''}`}
-            onClick={handleFavoriteClick}
-            aria-label={isFavorite ? "Удалить из избранного" : "Добавить в избранное"}
-            disabled={addFavoriteMutation.isPending || deleteFavoriteMutation.isPending}
-          >
-            {/* Показываем нужную иконку в зависимости от состояния */}
-            {isFavorite ? (
-              <LikeIconCheked className="hero-btns__icon" />
-            ) : (
-              <LikeIcon className="hero-btns__icon" />
-            )}
-          </button>
-      
+        {/* Избранное */}
+        <button
+          className={`hero-btns__like ${isFavorite ? 'active' : ''}`}
+          onClick={handleFavoriteClick}
+          aria-label={isFavorite ? "Удалить из избранного" : "Добавить в избранное"}
+          disabled={addFavoriteMutation.isPending || deleteFavoriteMutation.isPending}
+        >
+          {isFavorite ? (
+            <LikeIconCheked className="hero-btns__icon" />
+          ) : (
+            <LikeIcon className="hero-btns__icon" />
+          )}
+        </button>
+
         {showHistoryButton && (
           <button
             className="hero-btns__films"

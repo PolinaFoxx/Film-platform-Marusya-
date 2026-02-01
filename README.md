@@ -23,5 +23,5 @@
 
  ### Backend API
 - **Cinemaguide API** ([документация](https://cinemaguide.skillbox.cc/docs/))
-- **Сессионная авторизация** с cookies
+ - **Сессионная авторизация** с cookies
 - **RESTful архитектура** 

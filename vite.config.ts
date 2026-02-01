@@ -6,6 +6,6 @@ import svgr from "vite-plugin-svgr";
 // https://vite.dev/config/
 export default defineConfig({
  plugins: [ svgr(),react()],
-  base: '/Film-platform-Marusya/'
+  base: '/Film-platform-Marusya/-'
 })
 

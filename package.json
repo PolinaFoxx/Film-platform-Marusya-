@@ -1,5 +1,6 @@
 {
   "name": "my-app",
+    "homepage": "https://username.github.io/Film-platform-Marusya-/",
   "private": true,
   "version": "0.0.0",
   "type": "module",

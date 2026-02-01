@@ -22,7 +22,7 @@ const LoadingFallback = () => (
 
 function App() {
 	return (
-		<BrowserRouter>
+		<BrowserRouter basename="/Film-platform-Marusya-/">
 			<Header />
 			<Suspense fallback={<LoadingFallback />}>
 				<main>

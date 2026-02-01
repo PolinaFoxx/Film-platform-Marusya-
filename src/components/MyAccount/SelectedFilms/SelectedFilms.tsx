@@ -36,7 +36,7 @@ const SelectedFilms = () => {
           <li key={movie.id} className="select-films__item" >
             <div className="select-films__item-card">
               <Link to={`/movie/${movie.id}`} className="select-films__link">
-                <img src={movie.posterUrl} alt={movie.title}  className="select-films__img"/>
+                <img src={movie.posterUrl || ''} alt={movie.title}  className="select-films__img"/>
               </Link>
             </div>
             <button className="select-films__btn" onClick={() => handleDelete(movie.id)}>
